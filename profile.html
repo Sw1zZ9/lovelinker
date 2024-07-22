@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Профиль</h2>
+{% if photo_path %}
+    <img src="{{ photo_path }}" alt="Аватарка">
+{% endif %}
+<p>Имя: {{ name }}</p>
+<p>Возраст: {{ age }}</p>
+<p>Пол: {{ gender }}</p>
+<p>О себе: {{ bio }}</p>
+{% endblock %}

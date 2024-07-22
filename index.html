@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Dating App</h1>
+    <form action="{{ url_for('search') }}" method="post">
+        <label for="min_age">Min Age:</label>
+        <input type="number" id="min_age" name="min_age" required>
+        <label for="max_age">Max Age:</label>
+        <input type="number" id="max_age" name="max_age" required>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="не указано">Не указано</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Search Results</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Bio</th>
+                <th>Photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for profile in profiles %}
+            <tr>
+                <td>{{ profile.user_id }}</td>
+                <td>{{ profile.name }}</td>
+                <td>{{ profile.age }}</td>
+                <td>{{ profile.gender }}</td>
+                <td>{{ profile.bio }}</td>
+                <td><img src="{{ url_for('static', filename='uploads/' + profile.photo) }}" alt="Profile Photo"></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
